@@ -41,7 +41,7 @@ export const movies: Movie[] = (raw.movies as any[]).map((m) => ({
   imdb: m.ratings.imdb.value,
   kpVotes: m.ratings.kinopoisk.votes,
   trailer: m.links.official_trailer?.url ?? '',
-  poster: '/' + m.poster.path,
+  poster: import.meta.env.BASE_URL + m.poster.path,
   regularRelease: m.release?.russian_premiere?.release_type === 'theatrical_release',
 }))
 

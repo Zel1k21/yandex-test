@@ -29,7 +29,7 @@ function onSlideClick(movie: Movie, offset: number) {
     <a
       v-for="(movie, i) in movies"
       :key="movie.id"
-      :href="`/movie/${movie.id}`"
+      :href="router.resolve(`/movie/${movie.id}`).href"
       class="slide"
       :class="{ active: offsetOf(i) === 0, hidden: Math.abs(offsetOf(i)) > 1 }"
       :style="{ '--o': offsetOf(i) }"
